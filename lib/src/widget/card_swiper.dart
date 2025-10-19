@@ -172,10 +172,6 @@ class CardSwiper extends StatefulWidget {
           'you must display at least one card, and no more than [cardsCount]',
         ),
         assert(
-          initialIndex >= 0 && initialIndex < cardsCount,
-          'initialIndex must be between 0 and [cardsCount]',
-        ),
-        assert(
           undoSwipeThreshold >= 0,
           'undoSwipeThreshold must be a positive value',
         );

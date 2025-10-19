@@ -229,7 +229,7 @@ class _CardSwiperState<T extends Widget> extends State<CardSwiper>
       return;
     }
 
-    _undoableIndex.state = _nextIndex;
+    _undoableIndex.state = 0;
     _directionHistory.add(_detectedDirection);
 
     if (isLastCard) {
@@ -348,12 +348,9 @@ class _CardSwiperState<T extends Widget> extends State<CardSwiper>
     }
 
     final index = _currentIndex! + offset;
-
     if (!widget.isLoop && !index.isBetween(0, widget.cardsCount - 1)) {
       return null;
     }
-
-    final result = index % widget.cardsCount;
-    return result < 0 ? result + widget.cardsCount : result;
+    return 1;
   }
 }
